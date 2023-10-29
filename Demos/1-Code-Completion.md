@@ -12,4 +12,4 @@
 
 3. Open `PlaneController.cs`
 
-4. Tab to complete `ImageUrl`
+4. Tab to complete `ImageUrl` in all `Plane` objects
