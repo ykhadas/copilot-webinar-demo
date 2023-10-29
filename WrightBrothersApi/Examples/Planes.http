@@ -1,0 +1,13 @@
+GET http://localhost:1903/planes HTTP/1.1
+
+###
+
+POST http://localhost:1903/planes HTTP/1.1
+content-type: application/json
+
+{
+  "id": 3,
+  "name": "Wright Flyer III",
+  "year": 1905,
+  "description": "The first fully controllable Flyer."
+}
