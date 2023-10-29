@@ -1,0 +1,36 @@
+using Microsoft.AspNetCore.Mvc;
+using WrightBrothersApi.Models;
+
+namespace WrightBrothersApi.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class PlanesController : ControllerBase
+    {
+        private static readonly List<Plane> planes = new List<Plane>
+        {
+            new Plane { Id = 1, Name = "Wright Flyer", Year = 1903, Description = "The first successful heavier-than-air powered aircraft." },
+            new Plane { Id = 2, Name = "Wright Flyer II", Year = 1904, Description = "A refinement of the original Flyer with better performance." },
+            // Add more planes as needed
+        };
+
+        [HttpGet]
+        public ActionResult<List<Plane>> Get()
+        {
+            return planes;
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Plane> Get(int id)
+        {
+            var plane = planes.Find(p => p.Id == id);
+            if (plane == null)
+            {
+                return NotFound();
+            }
+            return plane;
+        }
+
+        // Additional CRUD operations can be added here
+    }
+}
