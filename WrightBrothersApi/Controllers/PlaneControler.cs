@@ -29,14 +29,7 @@ namespace WrightBrothersApi.Controllers
                 Name = "Wright Flyer II",
                 Year = 1904,
                 Description = "A refinement of the original Flyer with better performance."
-            },
-            new Plane
-            {
-                Id = 3,
-                Name = "Wright Flyer III",
-                Year = 1905,
-                Description = "The first fully controllable Flyer."
-            },
+            }
         };
 
         [HttpGet]
@@ -64,26 +57,6 @@ namespace WrightBrothersApi.Controllers
             planes.Add(plane);
 
             return CreatedAtAction(nameof(Get), new { id = plane.Id }, plane);
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, Plane plane)
-        {
-            if (id != plane.Id)
-            {
-                return BadRequest();
-            }
-
-            var index = planes.FindIndex(p => p.Id == id);
-
-            if (index == -1)
-            {
-                return NotFound();
-            }
-
-            planes[index] = plane;
-
-            return NoContent();
         }
     }
 }
