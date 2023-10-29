@@ -50,5 +50,13 @@ namespace WrightBrothersApi.Controllers
 
             return plane;
         }
+
+        [HttpPost]
+        public ActionResult<Plane> Post(Plane plane)
+        {
+            planes.Add(plane);
+
+            return CreatedAtAction(nameof(Get), new { id = plane.Id }, plane);
+        }
     }
 }
