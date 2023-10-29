@@ -7,6 +7,13 @@ namespace WrightBrothersApi.Controllers
     [Route("[controller]")]
     public class PlanesController : ControllerBase
     {
+        private readonly ILogger<PlanesController> _logger;
+
+        public PlanesController(ILogger<PlanesController> logger)
+        {
+            _logger = logger;
+        }
+
         private static readonly List<Plane> planes = new List<Plane>
         {
             new Plane
