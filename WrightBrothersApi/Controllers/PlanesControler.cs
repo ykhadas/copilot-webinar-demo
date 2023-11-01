@@ -5,11 +5,11 @@ namespace WrightBrothersApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PlaneController : ControllerBase
+    public class PlanesController : ControllerBase
     {
-        private readonly ILogger<PlaneController> _logger;
+        private readonly ILogger<PlanesController> _logger;
 
-        public PlaneController(ILogger<PlaneController> logger)
+        public PlanesController(ILogger<PlanesController> logger)
         {
             _logger = logger;
         }
