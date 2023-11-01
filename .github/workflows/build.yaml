@@ -1,0 +1,41 @@
+name: .NET 7 Build Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest # or ubuntu-latest or macos-latest
+
+    steps:
+      - uses: actions/checkout@v3 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
+      - name: Setup .NET 7 SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 7.0.x # Specify the .NET version
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+
+      - name: Run tests
+        run: dotnet test --no-build -c Release --verbosity normal
+
+      - name: Publish
+        run: dotnet publish -c Release -o ./publish
+
+      - name: Deploy
+        # To do
+
+      # This step archives the published application to be used in a release or deployment job
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: published-app
+          path: ./publish

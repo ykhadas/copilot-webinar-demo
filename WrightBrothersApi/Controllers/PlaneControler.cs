@@ -29,7 +29,7 @@ namespace WrightBrothersApi.Controllers
                 Name = "Wright Flyer II",
                 Year = 1904,
                 Description = "A refinement of the original Flyer with better performance."
-            }
+            },
         };
 
         [HttpGet]

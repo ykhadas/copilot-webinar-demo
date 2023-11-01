@@ -4,7 +4,7 @@
 
 2. Tab to complete extra planes in List
 
-# Completion 2 (New Property)
+# Completion 2 (New Property in a different file)
 
 1. Select `Plane.cs`
 
@@ -14,8 +14,18 @@
 
 4. Tab to complete `ImageUrl` in all `Plane` objects
 
-# Completion 3 (Consistency of Style)
+# Completion 3 (New Method)
 
 1. Select `PlaneController.cs`
 
-2. Logger log `""` -> `string.Empty`
+2. Type [HttpPut]
+
+# Completion 4 (Consistency of Style)
+
+1. Select `PlaneController.cs`
+
+2. Inside `Get()` type `_logger` ...
+
+3. Change content with `---`
+
+4. Type `_logger` ... in `Post()`

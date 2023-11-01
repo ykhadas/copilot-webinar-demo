@@ -1,3 +1,9 @@
+## Installing CoPilot Chat
+
+It's BETA for everyone
+
+- Extension
+
 ## Question 1:
 
 1. Select `PlaneController.cs`
