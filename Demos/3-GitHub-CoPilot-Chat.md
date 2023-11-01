@@ -1,8 +1,6 @@
-# Installing CoPilot Chat
+# Start explaining CoPilot chat window
 
-It's BETA for everyone
-
-- Install extension from Extensions Marketplace
+...
 
 # Interaction 1 (Explain the selected code)
 
@@ -62,15 +60,3 @@ public ActionResult<Plane> Get(string name)
 1. Select a piece of code
 
 2. CoPilot -> Generate Tests
-
-# Interaction 4 (Brainstorm about deploying to Azure):
-
-**Question 1**
-
-```
-How can I deploy this api to Azure?
-```
-
-**_Etc_**
-
-...
