@@ -1,21 +1,11 @@
-# Comments to Code
-
-## Sample 1 (Method Get Planes by Year)
+# 1. Comments to Code (Method Get Planes by Year)
 
 1. Select `PlaneController.cs`
 
 2. Type `// Method to get planes by year`
 
-## Sample 2 (New Property in a different file)
+# 2. Comments to Code
 
-1. Select `Plane.cs`
+1. Edit `Post()` method if plane already exist to return `BadRequest()`
 
-# Some CoPilot Features in the IDE
-
-## Feature 1 (Explain)
-
-## Feature 2 (Fix This)
-
-## Feature 3 (Generate Docs)
-
-## Feature 4 (Generate Tests)
+2. Type `//Return BadRequest if plane already exist`
