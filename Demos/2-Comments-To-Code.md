@@ -11,3 +11,11 @@
 1. Select `Plane.cs`
 
 # Some CoPilot Features in the IDE
+
+## Feature 1 (Explain)
+
+## Feature 2 (Fix This)
+
+## Feature 3 (Generate Docs)
+
+## Feature 4 (Generate Tests)

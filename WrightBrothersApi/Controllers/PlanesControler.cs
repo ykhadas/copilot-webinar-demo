@@ -5,16 +5,16 @@ namespace WrightBrothersApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PlanesController : ControllerBase
+    public class PlaneController : ControllerBase
     {
-        private readonly ILogger<PlanesController> _logger;
+        private readonly ILogger<PlaneController> _logger;
 
-        public PlanesController(ILogger<PlanesController> logger)
+        public PlaneController(ILogger<PlaneController> logger)
         {
             _logger = logger;
         }
 
-        private static readonly List<Plane> planes = new List<Plane>
+        private static readonly List<Plane> Planes = new List<Plane>
         {
             new Plane
             {
@@ -35,13 +35,13 @@ namespace WrightBrothersApi.Controllers
         [HttpGet]
         public ActionResult<List<Plane>> Get()
         {
-            return planes;
+            return Planes;
         }
 
         [HttpGet("{id}")]
         public ActionResult<Plane> Get(int id)
         {
-            var plane = planes.Find(p => p.Id == id);
+            var plane = Planes.Find(p => p.Id == id);
 
             if (plane == null)
             {
@@ -54,7 +54,7 @@ namespace WrightBrothersApi.Controllers
         [HttpPost]
         public ActionResult<Plane> Post(Plane plane)
         {
-            planes.Add(plane);
+            Planes.Add(plane);
 
             return CreatedAtAction(nameof(Get), new { id = plane.Id }, plane);
         }

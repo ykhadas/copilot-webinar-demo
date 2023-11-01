@@ -1,8 +1,10 @@
-## Installing CoPilot Chat
+# Installing CoPilot Chat
 
 It's BETA for everyone
 
-- Extension
+- Install extension from Extensions Marketplace
+
+# Interaction 1 (Explain the selected code)
 
 ## Question 1:
 
@@ -19,3 +21,13 @@ Tell me more about the planes
 ```
 
 ## Question 3:
+
+```
+
+```
+
+# Interaction 2 ():
+
+# Interaction 3 ():
+
+# Interaction 4 (Brainstorm about deploying to Azure):
