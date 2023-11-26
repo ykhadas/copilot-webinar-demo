@@ -30,8 +30,9 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release -o ./publish
 
-      - name: Deploy
-        # To do
+      # To do
+      #- name: Deploy
+        
 
       # This step archives the published application to be used in a release or deployment job
       - name: Archive production artifacts
