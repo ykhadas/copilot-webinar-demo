@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WrightBrothersApi.Models;
+using WrightBrothersApi.UseCases;
 
 namespace WrightBrothersApi.Controllers
 {
@@ -8,40 +9,18 @@ namespace WrightBrothersApi.Controllers
     public class PlanesController : ControllerBase
     {
         private readonly ILogger<PlanesController> _logger;
+        private readonly IPlanesUseCase _planesUseCase;
 
-        public PlanesController(ILogger<PlanesController> logger)
+        public PlanesController(ILogger<PlanesController> logger, IPlanesUseCase useCase)
         {
             _logger = logger;
-        }
-
-        private static readonly List<Plane> Planes = new List<Plane>
-        {
-            new Plane
-            {
-                Id = 1,
-                Name = "Wright Flyer",
-                Year = 1903,
-                Description = "The first successful heavier-than-air powered aircraft."
-            },
-            new Plane
-            {
-                Id = 2,
-                Name = "Wright Flyer II",
-                Year = 1904,
-                Description = "A refinement of the original Flyer with better performance."
-            },
-        };
-
-        [HttpGet]
-        public ActionResult<List<Plane>> Get()
-        {
-            return Planes;
+            _planesUseCase = useCase;
         }
 
         [HttpGet("{id}")]
         public ActionResult<Plane> Get(int id)
         {
-            var plane = Planes.Find(p => p.Id == id);
+            var plane = _planesUseCase.GetPlane(id);
 
             if (plane == null)
             {
@@ -51,12 +30,23 @@ namespace WrightBrothersApi.Controllers
             return plane;
         }
 
+        [HttpGet]
+        public ActionResult<List<Plane>> Get()
+        {
+            return _planesUseCase.GetPlanes();
+        }
+
         [HttpPost]
         public ActionResult<Plane> Post(Plane plane)
         {
-            Planes.Add(plane);
+            _planesUseCase.AddPlane(plane);
 
             return CreatedAtAction(nameof(Get), new { id = plane.Id }, plane);
         }
-    }
+
+
+
+
+
+   }
 }

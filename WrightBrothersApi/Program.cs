@@ -1,8 +1,14 @@
+using WrightBrothersApi.DAL;
+using WrightBrothersApi.UseCases;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IPlanesUseCase, PlanesUseCase>();
+builder.Services.AddScoped<IDataStore, PlanesDataStore>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
