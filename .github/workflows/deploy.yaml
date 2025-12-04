@@ -36,7 +36,7 @@ jobs:
 
       # This step archives the published application to be used in a release or deployment job
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: published-app
           path: ./publish
